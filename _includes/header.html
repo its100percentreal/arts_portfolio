@@ -1,10 +1,16 @@
 <header class="site-header">
+  <a class="site-title" href="{{ site.baseurl }}/"><h1>{{ site.title }}</h1></a>
   <a class="site-title" href="{{ site.baseurl }}/"><img src="holder.js/500x150"></a>
     
+{% assign current = page.url | downcase | split: '/' %}
   <nav class="navbar">
     <ul>
-      <li class="nav-item"><a href="{{ site.baseurl }}/">home</a></li>
-      <li class="nav-item"><a href="{{ site.baseurl }}/about/">about</a></li>
+      <!-- <li class="nav-item"><a href="{{ site.baseurl }}/">home</a></li> -->
+      <li {% if current[1] == 'editing' %} class='nav-item-current' {% elsif current[2] == 'editing' %} class='nav-item-current'{% else %}class='nav-item' {% endif %} ><a href="{{ site.baseurl }}/editing/">Editing</a></li>
+      <li {% if current[1] == 'new-media' %} class='nav-item-current' {% elsif current[2] == 'new-media' %} class='nav-item-current'{% else %}class='nav-item' {% endif %} ><a href="{{ site.baseurl }}/new-media/">New Media</a></li>
+      <li {% if current[1] == 'videography' %} class='nav-item-current' {% elsif current[2] == 'videography' %} class='nav-item-current'{% else %}class='nav-item' {% endif %} ><a href="{{ site.baseurl }}/videography/">Videography</a></li>
+      <li {% if current[1] == 'resume' %} class='nav-item-current' {% else %} class='nav-item' {% endif %} ><a href="{{ site.baseurl }}/resume/">Resume</a></li>
+      <li {% if current[1] == 'contact' %} class='nav-item-current' {% else %} class='nav-item' {% endif %} ><a href="{{ site.baseurl }}/contact/">Contact</a></li>
     </ul>
   </nav>
 

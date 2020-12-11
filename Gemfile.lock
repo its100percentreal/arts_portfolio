@@ -59,10 +59,11 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   jekyll
   jekyll-seo-tag
 
 BUNDLED WITH
-   1.17.3
+   2.2.0

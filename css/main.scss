@@ -13,3 +13,51 @@ $grey-color-dark:  darken($grey-color, 25%);
         "base",
         "layout"
 ;
+
+
+.nav-item-current {
+        display: inline-block;
+        padding: 1rem;
+        font-style: italic;
+}
+
+.nav-item-current :hover {
+        // display: inline-block;
+        text-decoration: underline;
+}
+
+.nav-item :hover {
+        // display: inline-block;
+        text-decoration: underline;
+}
+
+.breadcrumbs {
+        font-size: 1.2rem;
+        color: gray !important;
+}
+
+.breadcrumbs :hover {
+        text-decoration: underline;
+}
+
+
+.center {
+        text-align: center;
+}
+
+.videowrapper {
+        float: none;
+        clear: both;
+        width: 100%;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+    }
+.videowrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
