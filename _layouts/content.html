@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% assign current = page.url | downcase | split: '/' %}
+{% assign prevpage = page.previous.url | downcase | split: '/' %}
+{% assign nextpage = page.next.url | downcase | split: '/' %}
+
+<p>{% include breadcrumbs.html %}</p>
+<header class="post-header">
+    <h1 class="post-title center">{{ page.title }}</h1>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+  <div class="post">
+    <div class="post-nav">
+      {% if page.previous.url %}
+        {% if prevpage[1] == current[1] %}
+          <a class="nav-item" href="{{ page.previous.url | prepend: site.baseurl }}">&laquo; Previous</a>
+        {% endif %}
+      {% endif %}
+      {% if page.next.url %}
+        {% if nextpage[1] == current[1] %}
+        <a class="nav-item" href="{{ page.next.url | prepend: site.baseurl }}">Next &raquo;</a>
+        {% endif %}
+      {% endif %}
+    </div>
+
+</div>
